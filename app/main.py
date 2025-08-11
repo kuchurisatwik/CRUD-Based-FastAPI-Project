@@ -3,7 +3,7 @@ from .routers  import post, user, auth,vote
 from fastapi.middleware.cors import CORSMiddleware
 
 
-"""bitch you know it:"""
+
 
 app = FastAPI()
 
