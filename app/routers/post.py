@@ -26,7 +26,7 @@ def get_posts(db: Session = Depends(get_db),
     # posts = cursor.fetchall()
 
 
-"""creates post by clients through post requests and updateing the DB:"""
+"""creates post by clients through post requests and updates the DB:"""
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.PostOut)
 def create_posts(post: schemas.PostCreate, db: Session = Depends(get_db), 
@@ -68,7 +68,7 @@ def get_post(id: int,db: Session = Depends(get_db),
     return post 
 
 
-"""deletes the post by "id" from the DB and returns the Status_code: HTTP_204_NO_CONTENT. 
+"""deletes the post with "id" from the DB and returns the Status_code: HTTP_204_NO_CONTENT. 
  if the id not found in the DB, Returns the status_code: HTTP_404_NOT_FOUND:"""
 
 @router.delete("/{id}",status_code = status.HTTP_204_NO_CONTENT)
