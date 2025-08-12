@@ -11,17 +11,17 @@ from .config import settings
 SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
 
-# echo=True will log all SQLAlchemy activity—handy for debugging
+# 
+eho=True will log all SQLAlchemy activity—handy for debugging
 engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True)
 
-# Use a capitalized name for the session factory
+
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=engine
 )
 
-# Declarative base class for our ORM models
 Base = declarative_base()
     
 
